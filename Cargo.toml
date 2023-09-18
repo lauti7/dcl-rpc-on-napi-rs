@@ -1,0 +1,25 @@
+[package]
+edition = "2021"
+name = "testing-napi"
+version = "0.0.0"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+async-trait = "0.1.73"
+dcl-rpc = { version = "2.3.5", features = ["client", "memory"]}
+# Default enable napi4 feature, see https://nodejs.org/api/n-api.html#node-api-version-matrix
+napi = { version = "2.12.2", default-features = false, features = ["napi4", "async", "tokio_full"] }
+napi-derive = "2.12.2"
+prost = "0.11.5"
+
+
+[build-dependencies]
+napi-build = "2.0.1"
+prost-build = "0.11.5"
+dcl-rpc = { version = "2.3.5", features = ["client", "memory"]}
+
+
+[profile.release]
+lto = true
