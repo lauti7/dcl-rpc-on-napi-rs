@@ -252,7 +252,6 @@ if (!nativeBinding) {
   throw new Error(`Failed to load native binding`)
 }
 
-const { sum, executeRpcRust } = nativeBinding
+const { executeRpcRust } = nativeBinding
 
-module.exports.sum = sum
 module.exports.executeRpcRust = executeRpcRust

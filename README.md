@@ -12,6 +12,19 @@ $ npm install
 $ npm run build
 ```
 
+Execute it by running the tests:
+
 ```bash
 $ npm run test
+```
+
+Execute it manually:
+```bash
+$ node 
+Welcome to Node.js v18.17.0.
+Type ".help" for more information.
+> const addon = require('./index.js')
+undefined
+> addon.executeRpcRust()
+//...
 ```

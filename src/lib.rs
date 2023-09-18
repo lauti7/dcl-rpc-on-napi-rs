@@ -18,11 +18,6 @@ use napi::tokio::{select, sync::oneshot};
 use service::book_service;
 
 #[napi]
-pub fn sum(a: i32, b: i32) -> i32 {
-  a + b
-}
-
-#[napi]
 pub async fn execute_rpc_rust() {
   let (t_client, server_t) = MemoryTransport::create();
 
